@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  MdEditor
+
+  Created by Egor Ledkov on 01.07.2023.
+  
+*/
+
+"Main.title" = "MarkDown editor";
+
+"MainMenu.openDocument" = "Open document";
+"MainMenu.newDocument" = "New document";
+"MainMenu.aboutApp" = "About application";
+
+"OpenDoc.title" = "Choose storage";
+
+"About.file" = "about_en";
+
+"Error.open" = "Error opening the file: ";
+"Error.aboutScene" = "No information about the app!!! 😔";
+
+"FilesManager.Error.fileNotExist" = "File not exist";
+"FilesManager.Error.unKnowAttributes" = "Unknow attributes";
+"FilesManager.Error.canNotCreateFileExist" = "File already exist";
+
+"Alert.Title.error" = "Error";
+"Alert.Title.warning" = "Warning";
+"Alert.Button.ok" = "OK";
+"Alert.Button.save" = "Save";
+"Alert.Button.add" = "Add";
+"Alert.Button.cancel" = "Cancel";
+"Alert.PlaceHolder.newDoc" = "Enter name";
