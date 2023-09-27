@@ -1,0 +1,15 @@
+name: Swift
+
+on:
+  push:
+    branches: ['main', 'developer']
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build App
+        run: exec ./.github/build.sh
+      - name: Test App
+        run: exec ./.github/tests.sh

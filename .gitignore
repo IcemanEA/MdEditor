@@ -88,3 +88,10 @@ fastlane/test_output
 
 iOSInjectionProject/
 *.xcuserstate
+
+# After Tuist
+*.xcodeproj
+*.xcworkspace
+
+# SwiftLint portable library
+SwiftLint/
