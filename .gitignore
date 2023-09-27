@@ -92,3 +92,4 @@ iOSInjectionProject/
 # After Tuist
 *.xcodeproj
 *.xcworkspace
+*.pbxproj

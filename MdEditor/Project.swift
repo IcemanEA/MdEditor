@@ -4,7 +4,7 @@ let productName = "MdEditor"
 let unitTestsName = "MdEditorTests"
 
 let swiftLintScriptBody = "SwiftLint/swiftlint --fix && SwiftLint/swiftlint"
-let swiftLintScript = TargetScript.post(
+let swiftLintScript = TargetScript.pre(
 	script: swiftLintScriptBody,
 	name: "SwiftLint",
 	basedOnDependencyAnalysis: false
@@ -23,7 +23,10 @@ let target = Target(
 	deploymentTarget: .iOS(targetVersion: "14.0", devices: .iphone),
 	infoPlist: "MdEditor/Supporting Files/Info.plist",
 	sources: ["MdEditor/Sources/**", "MdEditor/Shared/**"],
-	resources: ["MdEditor/Resources/**"],
+	resources: [
+		"MdEditor/Resources/**",
+		.folderReference(path: "MdEditor/Examples")
+	],
 	scripts: [swiftLintScript],
 	dependencies: [.external(name: "PinLayout")],
 	settings: .settings(base: baseSettings)
