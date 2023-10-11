@@ -8,11 +8,9 @@
 import UIKit
 
 /// Сборщик экрана Открыть документ.
-enum OpenDocAssembler {
+final class OpenDocAssembler {
 	
-	/// Создает vieController.
-	/// - Returns: viewController экрана Открыть документ
-	static func createController(request: OpenDocModels.Request) -> UIViewController {
+	func assembly(request: OpenDocModels.Request, coordinator: IFileManagerCoordinator) -> UIViewController {
 		let viewController = OpenDocViewController(request: request)
 		
 		let filesManager = FilesManager()
@@ -22,11 +20,14 @@ enum OpenDocAssembler {
 		let recentlyFilesManager = RecentlyFilesManager(userDefaultsManager: userDefaultsManager, countOfRecently: 5)
 		
 		let presenter = OpenDocPresenter(viewController: viewController)
-		let interactor = OpenDocInteractor(presenter: presenter, filesWorker: filesWorker)
-		let router = OpenDocRouter(viewController: viewController, recentlyFilesManager: recentlyFilesManager)
+		let interactor = OpenDocInteractor(
+			coordinator: coordinator,
+			presenter: presenter,
+			filesWorker: filesWorker,
+			recentlyFilesManager: recentlyFilesManager
+		)
 		
 		viewController.interactor = interactor
-		viewController.router = router
 		
 		return viewController
 	}

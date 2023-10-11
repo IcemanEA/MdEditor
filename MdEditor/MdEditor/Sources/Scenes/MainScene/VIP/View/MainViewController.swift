@@ -22,7 +22,7 @@ final class MainViewController: UIViewController {
 	// MARK: - Internal Properties
 	
 	var interactor: IMainInteractor?
-	var router: IMainRouter?
+//	var router: IMainRouter?
 	
 	// MARK: - Private Properties
 	
@@ -136,11 +136,11 @@ extension MainViewController: UITableViewDelegate {
 		
 		switch item.type {
 		case .openDocument:
-			router?.showOpenDocScreen()
+			interactor?.showOpenDocScreen()
 		case .newDocument:
-			router?.showNewDocScreen()
+			interactor?.showNewDocAlert()
 		case .aboutApp:
-			router?.showAboutScreen()
+			interactor?.showAboutScreen()
 		}
 	}
 }
@@ -157,7 +157,7 @@ extension MainViewController: UICollectionViewDelegate {
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let url = viewModel.recentlyItems[indexPath.row].url
 		
-		router?.showFile(url)
+		interactor?.showFile(url)
 	}
 }
 

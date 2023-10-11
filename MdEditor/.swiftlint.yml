@@ -179,3 +179,4 @@ reporter: "xcode"
 
 disabled_rules:
 - trailing_whitespace
+- class_delegate_protocol

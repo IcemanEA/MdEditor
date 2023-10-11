@@ -9,24 +9,25 @@ import UIKit
 
 /// Assembler экрана главного меню приложения.
 final class MainAssembler {
+	
 	/// Сборка экрана с главным меню.
-	func assembly() -> UIViewController {
+	func assembly(coordinator: IMainCoordinator) -> UIViewController {
 		let mainViewController = MainViewController()
-		let filesManager = FilesManager()
 		let userDefaultsManager = UserDefaultsManager()
+		let filesManager = FilesManager()
 		
 		let presenter = MainPresenter(viewController: mainViewController)
 		let menuManager = MainMenuManager()
 		let recentlyFilesManager = RecentlyFilesManager(userDefaultsManager: userDefaultsManager, countOfRecently: 5)
 		let interactor = MainInteractor(
+			coordinator: coordinator,
 			presenter: presenter,
 			menuManager: menuManager,
+			filesManager: filesManager,
 			recentlyFilesManager: recentlyFilesManager
 		)
-		let router = MainRouter(viewController: mainViewController, filesManager: filesManager)
 		
 		mainViewController.interactor = interactor
-		mainViewController.router = router
 		
 		return mainViewController
 	}

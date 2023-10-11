@@ -35,6 +35,7 @@ final class FilesManager: IFilesManager {
 		case fileNotExist
 		case unKnowAttributes
 		case canNotCreateFileExist
+		case canNotCreateWithThisName
 	}
 	
 	// MARK: - Private Properties
@@ -93,7 +94,9 @@ final class FilesManager: IFilesManager {
 		url = url.appendingPathComponent("\(name).\(ext)")
 		
 		if !fileManager.fileExists(atPath: url.path) {
-			fileManager.createFile(atPath: url.path, contents: nil)
+			if !fileManager.createFile(atPath: url.path, contents: nil) {
+				throw Error.canNotCreateWithThisName
+			}
 		} else {
 			throw Error.canNotCreateFileExist
 		}

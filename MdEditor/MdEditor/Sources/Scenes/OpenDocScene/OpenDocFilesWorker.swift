@@ -79,6 +79,8 @@ extension FilesManager.Error: LocalizedError {
 			return L10n.Localizable.FilesManager.Error.unKnowAttributes
 		case .canNotCreateFileExist:
 			return L10n.Localizable.FilesManager.Error.canNotCreateFileExist
+		case .canNotCreateWithThisName:
+			return ""
 		}
 	}
 }

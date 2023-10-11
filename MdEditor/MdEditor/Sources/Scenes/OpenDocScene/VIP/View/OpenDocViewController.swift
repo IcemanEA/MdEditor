@@ -22,7 +22,6 @@ final class OpenDocViewController: UIViewController {
 	// MARK: - Internal Properties
 	
 	var interactor: IOpenDocInteractor?
-	var router: IOpenDocRouter?
 	
 	// MARK: - Private Properties
 	private let request: OpenDocModels.Request
@@ -90,7 +89,7 @@ extension OpenDocViewController: IOpenDocViewController {
 
 extension OpenDocViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return viewModel.files.count
+		viewModel.files.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -116,11 +115,9 @@ extension OpenDocViewController: UITableViewDelegate {
 		switch file.type {
 		case .directory:
 			let request = OpenDocModels.Request(directoryPath: file.url)
-			router?.showNextOpenDocScreen(request: request)
+			interactor?.showNextOpenDocScreen(request: request)
 		case .file:
-			// swiftlint:disable:next print_using
-			print("Открыть файл \"\(file.url)\"")
-			router?.showFile(by: file.url)
+			interactor?.showFile(by: file.url)
 		}
 	}
 }

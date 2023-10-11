@@ -21,7 +21,8 @@
 
 "FilesManager.Error.fileNotExist" = "File not exist";
 "FilesManager.Error.unKnowAttributes" = "Unknow attributes";
-"FilesManager.Error.canNotCreateFileExist" = "File already exist";
+"FilesManager.Error.canNotCreateFileExist" = "File already exist!";
+"FilesManager.Error.canNotCreateWithThisName" = "This name doesn't support!";
 
 "Alert.Title.error" = "Error";
 "Alert.Title.warning" = "Warning";

@@ -21,7 +21,8 @@
 
 "FilesManager.Error.fileNotExist" = "Файл или папка не найдены";
 "FilesManager.Error.unKnowAttributes" = "Аттрибуты файла или папки нельзя прочитать";
-"FilesManager.Error.canNotCreateFileExist" = "Файл с таким именем уже существует";
+"FilesManager.Error.canNotCreateFileExist" = "Файл с таким именем уже существует!";
+"FilesManager.Error.canNotCreateWithThisName" = "Такое название файла не поддерживается!";
 
 "Alert.Title.error" = "Ошибка";
 "Alert.Title.warning" = "Внимание";
