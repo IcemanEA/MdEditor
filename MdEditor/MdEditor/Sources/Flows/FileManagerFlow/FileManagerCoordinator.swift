@@ -9,8 +9,17 @@
 import UIKit
 
 protocol IFileManagerCoordinator: ICoordinator {
+	
+	/// Открыть сцену с выбором файла
+	/// - Parameter dir: путь к каталогу
 	func showOpenDocScene(dir: URL?)
+	
+	/// Открыть сцену редактирования файла
+	/// - Parameter path: путь к файлу
 	func showEditScene(path: URL?)
+	
+	/// Открыть сцену для просмотра файла
+	/// - Parameter path: путь к файлу
 	func showPreviewScene(path: URL?)
 }
 

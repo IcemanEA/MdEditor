@@ -80,7 +80,7 @@ extension FilesManager.Error: LocalizedError {
 		case .canNotCreateFileExist:
 			return L10n.Localizable.FilesManager.Error.canNotCreateFileExist
 		case .canNotCreateWithThisName:
-			return ""
+			return L10n.Localizable.FilesManager.Error.canNotCreateWithThisName
 		}
 	}
 }

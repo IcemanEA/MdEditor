@@ -8,10 +8,15 @@
 
 import Foundation
 
+/// Структура  модели данных для отображения Alert через координатор
 struct CoordinatorAlertModel {
+	/// Заголовок.
 	let title: String?
+	/// Текст сообщения.
 	let message: String?
+	/// Текстовые поля.
 	let textFields: [TextField]?
+	/// Кнопки
 	let buttons: [Button]
 	
 	init(
@@ -35,12 +40,14 @@ struct CoordinatorAlertModel {
 
 extension CoordinatorAlertModel {
 	
+	/// Стиль кнопки в алерте.
 	enum ButtonStyle {
 		case def
 		case cancel
 		case destructive
 	}
 	
+	/// Кнопка в модели данных.
 	struct Button {
 		let title: String
 		let style: ButtonStyle
@@ -65,6 +72,7 @@ extension CoordinatorAlertModel {
 
 extension CoordinatorAlertModel {
 	
+	/// Текстовое поле в модели данных.
 	struct TextField {
 		let placeHolder: String
 	}

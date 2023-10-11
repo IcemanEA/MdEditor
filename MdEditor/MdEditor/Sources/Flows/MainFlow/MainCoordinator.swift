@@ -8,10 +8,21 @@
 
 import UIKit
 
+/// Протокол  координатора главного меню.
 protocol IMainCoordinator: ICoordinator {
+	
+	/// Показываем главную сцену.
 	func showMainScene()
+	
+	/// Показываем файловый менеджер.
+	/// - Parameter path: путь к файлу или папке
 	func showFileManagerFlow(path: URL?)
+	
+	/// Показать Alert.
+	/// - Parameter data: модель данных для рендера Alert
 	func showAlert(with data: CoordinatorAlertModel)
+	
+	/// Показать сцену о программе.
 	func showAboutScene()
 }
 

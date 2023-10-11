@@ -24,6 +24,11 @@ protocol IFilesManager {
 	/// - Returns: папка из бандла
 	func getBundleDirectory(withPath path: String) throws -> File?
 	
+	/// Создание пустого файла в папке с документами.
+	/// - Parameters:
+	///   - name: название файла
+	///   - extension: расширение файла
+	/// - Returns: адрес нового файла
 	func createFile(with name: String, and extension: String) throws -> URL
 }
 

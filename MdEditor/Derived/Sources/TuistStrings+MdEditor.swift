@@ -50,8 +50,10 @@ public enum L10n {
     public enum FilesManager {
         
     public enum Error {
-            /// File already exist
+            /// File already exist!
         public static let canNotCreateFileExist = L10n.tr("Localizable", "FilesManager.Error.canNotCreateFileExist")
+          /// This name doesn't support!
+        public static let canNotCreateWithThisName = L10n.tr("Localizable", "FilesManager.Error.canNotCreateWithThisName")
           /// File not exist
         public static let fileNotExist = L10n.tr("Localizable", "FilesManager.Error.fileNotExist")
           /// Unknow attributes

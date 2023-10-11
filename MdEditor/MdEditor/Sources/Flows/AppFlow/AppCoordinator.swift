@@ -10,6 +10,8 @@ import UIKit
 
 /// Протокол общего координатора приложения
 protocol IAppCoordinator: ICoordinator {
+	
+	/// Открываем главный сценарий.
 	func showMainFlow()
 }
 

@@ -49,6 +49,7 @@ public enum Asset {
   public static let folder = ImageAsset(name: "folder")
   public static let questionMark = ImageAsset(name: "questionMark")
   }
+  public static let mdEditor = ImageAsset(name: "MdEditor")
 
   public static let allColors: [ColorAsset] = [
   accentColor,
@@ -58,6 +59,7 @@ public enum Asset {
   Icons.docFill,
   Icons.folder,
   Icons.questionMark,
+  mdEditor,
   ]
   @available(*, deprecated, renamed: "allImages")
   public static let allValues: [AssetType] = allImages

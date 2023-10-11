@@ -9,6 +9,8 @@ import UIKit
 
 extension UIAlertController {
 	
+	/// Создание алерта из модели данных координатора.
+	/// - Parameter coordinatorData: модель данных координатора
 	convenience init(coordinatorData: CoordinatorAlertModel) {
 		self.init(title: coordinatorData.title, message: coordinatorData.message, preferredStyle: .alert)
 		coordinatorData.buttons
