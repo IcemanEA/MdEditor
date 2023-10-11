@@ -12,7 +12,7 @@ let swiftLintScript = TargetScript.pre(
 
 let baseSettings = SettingsDictionary()
 	.currentProjectVersion("1")
-	.marketingVersion("1.0")
+	.marketingVersion("1.1")
 
 let target = Target(
 	name: productName,
